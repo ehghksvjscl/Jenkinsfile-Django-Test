@@ -37,12 +37,12 @@ pipeline {
             }
         }
 
-	stage('Clean docker image python - local docker reg) {
+	stage('Clean docker image python - local docker reg') {
 	    steps{
 	        sh "docker rmi $rmipython"
 	    }
 	}
-        stage('Clean docker image Django - local docker reg) {
+        stage('Clean docker image Django - local docker reg') {
             steps{
                 sh "docker rmi $localregistry"
             }
