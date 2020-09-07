@@ -2,8 +2,8 @@ pipeline {
     environment {
         registry = "ehghksvjscl/django-jenkins"
         registryCredential = 'docker_id'
-	rmipython = 'python'
-	localhost = ''
+	rmipython = 'python:3'
+	localhost = 'localhost:5000'
     }
     agent any
     stages {
