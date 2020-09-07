@@ -3,6 +3,7 @@ pipeline {
         registry = "ehghksvjscl/django-jenkins"
         registryCredential = 'docker_id'
 	rmipython = 'python'
+	localhost = ''
     }
     agent any
     stages {
@@ -25,7 +26,7 @@ pipeline {
         }
         stage('Clean docker image') {
             steps{
-                sh "docker rmi $registry & docker rmi $rmi python"
+                sh "docker rmi $registry & docker rmi $rmipython"
             }
         }
      }
