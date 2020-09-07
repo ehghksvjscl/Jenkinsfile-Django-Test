@@ -26,7 +26,8 @@ pipeline {
         }
         stage('Clean docker image') {
             steps{
-                sh "docker rmi $registry & docker rmi $rmipython"
+                sh "docker rmi $registry"
+		sh "docker rmi $rmipython"
             }
         }
      }
