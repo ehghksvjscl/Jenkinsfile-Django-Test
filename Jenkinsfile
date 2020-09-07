@@ -31,11 +31,23 @@ pipeline {
 		sh 'docker push $localregistry:latest'
 	    }	
 	}
-        stage('Clean docker image') {
+        stage('Clean docker image - real docker reg') {
             steps{
 		sh "docker rmi $registry:latest"
             }
         }
+
+	stage('Clean docker image python - local docker reg) {
+	    steps{
+	        sh "docker rmi $rmipython"
+	    }
+	}
+        stage('Clean docker image Django - local docker reg) {
+            steps{
+                sh "docker rmi $localregistry"
+            }
+        }
+
      }
 }
 
