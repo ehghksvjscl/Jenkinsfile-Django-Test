@@ -27,7 +27,7 @@ pipeline {
         }
 	stage('Deploy docker image to local_docker registry') {
 	    steps {
-		sh 'docker build -t $localregistry:latest'
+		sh 'docker tag $registry $localregistry'
 		sh 'docker push $localregistry:latest'
 	    }	
 	}
