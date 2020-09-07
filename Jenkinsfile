@@ -1,10 +1,15 @@
 pipeline {
     environment {
-        registry = "ehghksvjscl/myapp-jenkins"
+        registry = "ehghksvjscl/django-jenkins"
         registryCredential = 'docker_id'
     }
     agent any
     stages {
+	stage('UnitTest Django') {
+	    steps {
+	    	sh 'python manage.py test'
+	    }
+	}
         stage('Build docker image') {
             steps {
                 sh 'docker build -t $registry:latest .'
