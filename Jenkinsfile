@@ -33,7 +33,6 @@ pipeline {
 	}
         stage('Clean docker image') {
             steps{
-                sh "docker rmi $registry"
 		sh "docker rmi $localhostregistry"
             }
         }
