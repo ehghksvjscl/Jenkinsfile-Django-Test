@@ -20,5 +20,5 @@ class SampleTest(TestCase):
         client = Client()
         response = client.get("/fale")
 
-        self.assertEqual(response.status_code, 404)
+        self.assertEqual(response.status_code, 400)
   
